@@ -6,7 +6,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="text-sm-end d-none d-sm-block">
-                                    Developed By <i class="mdi mdi-heart text-danger"></i> Webbitech
+                                    Developed By.. <i class="mdi mdi-heart text-danger"></i> Webbitech
                                 </div>
                             </div>
                         </div>
