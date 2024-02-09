@@ -142,9 +142,8 @@ Route::controller(SupplierController::class)->group(function () {
     Route::post('/books/update', 'Update')->name('books.update');
     Route::get('/books/delete/{id}', 'Delete')->name('books.delete');
     Route::post('crop-image-upload-ajax_gallery', 'AjaxCrop')->name('crop-image-upload-ajax_gallery');
+    Route::post('/books_api/store', 'APIBooksStore')->name('api_books.store');
 
-
-    
 });
 
 

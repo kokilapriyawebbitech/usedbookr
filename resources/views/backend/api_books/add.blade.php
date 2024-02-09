@@ -40,7 +40,7 @@
             
   
 
-            <form method="post" action="{{ route('books.store') }}" id="myForm" >
+            <form method="post" action="{{ route('api_books.store') }}" id="myForm" >
                 @csrf
 
                 <div class="row mb-3">
@@ -147,7 +147,7 @@
             <div class="row mb-3">
                 <label for="example-text-input" class="col-sm-2 col-form-label">  Edition  </label>
                 <div class="form-group col-sm-5">
-                    <input name="edition" class="form-control" type="text"     value="{{$jsonResponse['book']['edition']}}">
+                    <input name="edition" class="form-control" type="text"     value="{{isset($jsonResponse['book']['edition']) ? $jsonResponse['book']['edition'] : ''  }}">
                 </div>
             </div>
             <!-- end row -->
@@ -230,7 +230,7 @@
             </div>
             <!-- end row -->
 
-            
+
         
             <input type="submit" class="btn btn-info waves-effect waves-light" value="Add">
             </form>

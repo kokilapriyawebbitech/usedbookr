@@ -199,6 +199,16 @@ class OTPController extends Controller
         }
     }
 
+
+    public function FetchUser(){ 
+              
+    $user = Auth::user();
+
+    return response()->json(['user'=>$user]); 
+  
+  
+}
+
     public function Login(){ 
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){ 
             $user = Auth::user(); 

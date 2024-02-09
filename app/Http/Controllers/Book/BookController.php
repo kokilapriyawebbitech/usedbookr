@@ -11,6 +11,9 @@ use App\Models\Author;
 use App\Models\Category;
 use App\Models\Binding;
 use App\Models\BookCondition;
+use App\Models\Book;
+
+
 
 
 class BookController extends Controller
@@ -137,7 +140,38 @@ class BookController extends Controller
     }
 
 
-    
+    public function APIBooksStore(Request $request){
+
+
+        $book = new Book();
+        $book->category_id = $request->input('category');
+        $book->binding_type_id = $request->input('binding_type');
+        $book->condition_id = $request->input('condition');
+        $book->binding = $request->input('binding');
+        $book->name = $request->input('name');
+        $book->title_long = $request->input('title_long');
+        $book->isbn = $request->input('isbn');
+        $book->isbn13 = $request->input('isbn13');
+        $book->publisher = $request->input('publisher');
+        $book->language = $request->input('language');
+        $book->edition = $request->input('edition');
+        $book->pages = $request->input('pages');
+        $book->dimensions = $request->input('dimensions');
+        $book->image = $request->input('image');
+        $book->synopsis = $request->input('synopsis');
+        $book->price = $request->input('price');
+        $book->original_price = $request->input('original_price');
+        $book->offer = $request->input('offer');
+        $book->status = $request->input('status');
+        $book->save();
+
+        $notification = array(
+            'message' => 'Book Added Successfully', 
+            'alert-type' => 'success'
+        );
+        return redirect()->route('api.books.all')->with($notification);
+
+    }
        
     }
 
